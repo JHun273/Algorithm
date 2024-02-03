@@ -1,0 +1,57 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    list<char> L;
+    list<char>::iterator t = L.begin();
+
+    char s[1000000] = {-1,};
+    cin>>s;
+    for(int i = 0; s[i] != -1; i++)
+    {
+        L.push_back(s[i]);
+    }
+
+    int n;
+    cin>>n;
+
+    t = L.end();
+    for(int i = 0; i<n; i++)
+    {
+        char x[2] = {-1, };
+        cin>>x[0];
+        if(x[0] = 'P') 
+        {   
+            cin>>x[2];
+            L.insert(t, x[2]);
+        }
+        else if(x[0] = 'L')
+        {
+            if(t != L.begin()) t--;
+        }
+        else if(x[0] = 'D')
+        {
+            if(t != L.end()) t++;
+        }
+        else if(x[0] = 'B')
+        {
+            if(t != L.begin()) L.erase(t-1);
+        }
+    }
+
+    for(char e : L)
+    {
+        cout<<e;
+    }
+        
+
+
+
+
+
+
+}
